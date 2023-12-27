@@ -49,10 +49,10 @@ public class MainMenu : MonoBehaviour
         YandexGame.SaveProgress();
     }
 
-    public void EnableAchievementsPlane(GameObject gameName, GameObject[] achievements)
+    public void EnableAchievementsPlane()
     {
-        gameName.SetActive(false);
-        foreach (var achievement in achievements)
-            achievement.SetActive(true);
+        GameObject.FindGameObjectWithTag("GameName").SetActive(false);
+        var buttons = GameObject.FindGameObjectsWithTag("MainMenuButton");
+        foreach (var button in buttons) button.SetActive(false);
     }
 }
